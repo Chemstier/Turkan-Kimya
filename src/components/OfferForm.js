@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   FaUser,
   FaEnvelope,
@@ -6,43 +6,51 @@ import {
   FaClipboardList,
   FaCommentDots,
 } from "react-icons/fa";
-import { categories } from "../data/categories";
+import { useTranslation } from "react-i18next";
+import { useCatalog } from "../data/useCatalog";
 import { company } from "../data/company";
+import TurnstileWidget from "./TurnstileWidget";
 
 const maxLength = 600;
 
+const emptyForm = {
+  name: "",
+  email: "",
+  phone: "",
+  message: "",
+  selectedProducts: [],
+};
+
 const OfferForm = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    selectedProducts: [],
-  });
+  const { t, i18n } = useTranslation();
+  const catalog = useCatalog();
+  const turnstileRef = useRef(null);
+  const [form, setForm] = useState(emptyForm);
+  const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
   const [errors, setErrors] = useState({});
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
   const [expandedCategory, setExpandedCategory] = useState(null);
+  const turnstileEnabled = Boolean(company.turnstileSiteKey);
 
-  const toggleCategory = (categoryName) => {
-    setExpandedCategory((prev) =>
-      prev === categoryName ? null : categoryName
-    );
+  const toggleCategory = (categoryId) => {
+    setExpandedCategory((prev) => (prev === categoryId ? null : categoryId));
   };
 
   const validate = () => {
     const newErrors = {};
-    if (!form.name.trim()) newErrors.name = "İsim gerekli";
+    if (!form.name.trim()) newErrors.name = "name";
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email)) {
-      newErrors.email = "Geçerli e-posta gerekli";
+      newErrors.email = "email";
     }
     if (!form.phone.trim() || !/^[0-9+\s()-]{7,}$/.test(form.phone)) {
-      newErrors.phone = "Telefon gerekli";
+      newErrors.phone = "phone";
     }
-    if (!form.message.trim()) newErrors.message = "Mesaj gerekli";
+    if (!form.message.trim()) newErrors.message = "message";
     if (form.selectedProducts.length === 0) {
-      newErrors.selectedProducts = "En az bir ürün seçmelisiniz";
+      newErrors.selectedProducts = "selectedProducts";
     }
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -80,13 +88,29 @@ const OfferForm = () => {
       !company.formspreeEndpoint ||
       company.formspreeEndpoint.includes("YOUR_FORM_ID")
     ) {
-      setSubmitError(
-        "Form henüz yapılandırılmadı. Formspree form ID'sini ekleyin."
-      );
+      setSubmitError("notConfigured");
       return;
     }
 
-    const selectedProductDetails = categories
+    const gotchaValue = (
+      honeypot ||
+      (e.target.elements.namedItem("_gotcha")?.value ?? "")
+    ).trim();
+
+    if (gotchaValue) {
+      setSent(true);
+      setForm(emptyForm);
+      setHoneypot("");
+      setExpandedCategory(null);
+      return;
+    }
+
+    if (turnstileEnabled && !turnstileToken) {
+      setSubmitError("captchaRequired");
+      return;
+    }
+
+    const selectedProductDetails = catalog
       .flatMap((cat) =>
         cat.products
           .filter((p) => form.selectedProducts.includes(p.id))
@@ -98,40 +122,59 @@ const OfferForm = () => {
     setSubmitError("");
 
     try {
+      const payload = {
+        name: form.name,
+        email: form.email,
+        phone: form.phone,
+        message: form.message,
+        products: selectedProductDetails,
+        _subject: t("offer.subject"),
+        _replyto: form.email,
+        _gotcha: "",
+      };
+
+      if (turnstileEnabled) {
+        payload["cf-turnstile-response"] = turnstileToken;
+      }
+
       const response = await fetch(company.formspreeEndpoint, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
         },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          phone: form.phone,
-          message: form.message,
-          products: selectedProductDetails,
-          _subject: "Teklif Talebi — Türkan Kimya",
-          _replyto: form.email,
-        }),
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
-        throw new Error("Form submission failed");
+        let details = "";
+        try {
+          details = JSON.stringify(await response.json()).toLowerCase();
+        } catch {
+          details = "";
+        }
+        if (
+          details.includes("turnstile") ||
+          details.includes("captcha") ||
+          details.includes("cf-turnstile")
+        ) {
+          setSubmitError("captchaFailed");
+        } else {
+          setSubmitError("submitFailed");
+        }
+        turnstileRef.current?.reset();
+        return;
       }
 
       setSent(true);
-      setForm({
-        name: "",
-        email: "",
-        phone: "",
-        message: "",
-        selectedProducts: [],
-      });
+      setForm(emptyForm);
+      setHoneypot("");
+      setTurnstileToken("");
       setExpandedCategory(null);
+      turnstileRef.current?.reset();
     } catch {
-      setSubmitError(
-        "Gönderim başarısız oldu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin."
-      );
+      setSubmitError("submitFailed");
+      turnstileRef.current?.reset();
     } finally {
       setSubmitting(false);
     }
@@ -139,11 +182,11 @@ const OfferForm = () => {
 
   return (
     <section id="offer" className="section offer-section">
-      <h2>Teklif Al</h2>
+      <h2>{t("offer.title")}</h2>
       <div className="offer-form-section">
         <img
-          src="/Offer.jpg"
-          alt="Teklif"
+          src={`${process.env.PUBLIC_URL}/Offer.jpg`}
+          alt={t("offer.alt")}
           className="offer-image"
           loading="lazy"
         />
@@ -155,58 +198,74 @@ const OfferForm = () => {
               autoComplete="off"
               noValidate
             >
+              <div className="offer-hp" aria-hidden="true" inert>
+                <input
+                  type="text"
+                  name="_gotcha"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
               <div className="offer-form-row">
                 <label className="offer-form-label" htmlFor="offer-name">
                   <FaUser className="offer-form-icon" aria-hidden="true" />
-                  <span>Adınız Soyadınız</span>
+                  <span>{t("offer.name")}</span>
                 </label>
                 <input
                   id="offer-name"
                   type="text"
                   name="name"
-                  placeholder="Adınız Soyadınız"
+                  placeholder={t("offer.name")}
                   value={form.name}
                   onChange={handleChange}
                   className={errors.name ? "error" : ""}
                 />
                 {errors.name && (
-                  <span className="offer-form-error">{errors.name}</span>
+                  <span className="offer-form-error">
+                    {t(`offer.errors.${errors.name}`)}
+                  </span>
                 )}
               </div>
               <div className="offer-form-row">
                 <label className="offer-form-label" htmlFor="offer-email">
                   <FaEnvelope className="offer-form-icon" aria-hidden="true" />
-                  <span>E-posta</span>
+                  <span>{t("offer.email")}</span>
                 </label>
                 <input
                   id="offer-email"
                   type="email"
                   name="email"
-                  placeholder="E-posta"
+                  placeholder={t("offer.email")}
                   value={form.email}
                   onChange={handleChange}
                   className={errors.email ? "error" : ""}
                 />
                 {errors.email && (
-                  <span className="offer-form-error">{errors.email}</span>
+                  <span className="offer-form-error">
+                    {t(`offer.errors.${errors.email}`)}
+                  </span>
                 )}
               </div>
               <div className="offer-form-row">
                 <label className="offer-form-label" htmlFor="offer-phone">
                   <FaPhone className="offer-form-icon" aria-hidden="true" />
-                  <span>Telefon</span>
+                  <span>{t("offer.phone")}</span>
                 </label>
                 <input
                   id="offer-phone"
                   type="tel"
                   name="phone"
-                  placeholder="Telefon"
+                  placeholder={t("offer.phone")}
                   value={form.phone}
                   onChange={handleChange}
                   className={errors.phone ? "error" : ""}
                 />
                 {errors.phone && (
-                  <span className="offer-form-error">{errors.phone}</span>
+                  <span className="offer-form-error">
+                    {t(`offer.errors.${errors.phone}`)}
+                  </span>
                 )}
               </div>
               <div className="offer-form-row">
@@ -215,34 +274,44 @@ const OfferForm = () => {
                     className="offer-form-icon"
                     aria-hidden="true"
                   />
-                  <span>Mesajınız</span>
+                  <span>{t("offer.message")}</span>
                 </label>
                 <textarea
                   id="offer-message"
                   name="message"
-                  placeholder="Mesajınız"
+                  placeholder={t("offer.message")}
                   value={form.message}
                   onChange={handleChange}
                   className={errors.message ? "error" : ""}
                   style={{ resize: "none", height: "120px" }}
                 />
                 <div className="char-counter">
-                  {remainingChars} karakter kaldı
+                  {t("offer.charsRemaining", { count: remainingChars })}
                 </div>
                 {errors.message && (
-                  <span className="offer-form-error">{errors.message}</span>
+                  <span className="offer-form-error">
+                    {t(`offer.errors.${errors.message}`)}
+                  </span>
                 )}
               </div>
+              {turnstileEnabled && (
+                <TurnstileWidget
+                  ref={turnstileRef}
+                  siteKey={company.turnstileSiteKey}
+                  language={(i18n.resolvedLanguage || i18n.language || "auto").split("-")[0]}
+                  onToken={setTurnstileToken}
+                />
+              )}
               <button
                 type="submit"
                 className="offer-form-btn"
                 disabled={submitting}
               >
-                {submitting ? "Gönderiliyor..." : "Gönder"}
+                {submitting ? t("offer.submitting") : t("offer.submit")}
               </button>
               {submitError && (
                 <span className="offer-form-error offer-submit-error">
-                  {submitError}
+                  {t(`offer.${submitError}`)}
                 </span>
               )}
             </form>
@@ -250,31 +319,33 @@ const OfferForm = () => {
           <div className="offer-products-card">
             <div className="offer-form-label">
               <FaClipboardList className="offer-form-icon" aria-hidden="true" />
-              <span>Ürün Seçimi</span>
+              <span>{t("offer.productSelect")}</span>
               {form.selectedProducts.length > 0 && (
                 <span className="selected-count">
-                  ({form.selectedProducts.length} seçildi)
+                  {t("offer.selectedCount", {
+                    count: form.selectedProducts.length,
+                  })}
                 </span>
               )}
             </div>
             <div className="offer-products-scroll-container">
               <div className="offer-products-scroll-list">
-                {categories.map((category) => (
+                {catalog.map((category) => (
                   <div key={category.id} className="product-category-section">
                     <button
                       type="button"
                       className="product-category-header"
-                      onClick={() => toggleCategory(category.name)}
-                      aria-expanded={expandedCategory === category.name}
+                      onClick={() => toggleCategory(category.id)}
+                      aria-expanded={expandedCategory === category.id}
                     >
                       <span>{category.name}</span>
                       <span className="category-expand-icon">
-                        {expandedCategory === category.name ? "−" : "+"}
+                        {expandedCategory === category.id ? "−" : "+"}
                       </span>
                     </button>
                     <div
                       className={`product-category-content ${
-                        expandedCategory === category.name ? "expanded" : ""
+                        expandedCategory === category.id ? "expanded" : ""
                       }`}
                     >
                       {category.products.map((product) => (
@@ -300,14 +371,16 @@ const OfferForm = () => {
               </div>
             </div>
             {errors.selectedProducts && (
-              <span className="offer-form-error">{errors.selectedProducts}</span>
+              <span className="offer-form-error">
+                {t(`offer.errors.${errors.selectedProducts}`)}
+              </span>
             )}
           </div>
         </div>
         {sent && (
           <div className="offer-success" role="status">
-            <h3>Talebiniz başarıyla iletildi!</h3>
-            <p>En kısa sürede sizinle iletişime geçeceğiz.</p>
+            <h3>{t("offer.successTitle")}</h3>
+            <p>{t("offer.successBody")}</p>
           </div>
         )}
       </div>

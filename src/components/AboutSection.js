@@ -1,37 +1,39 @@
 import React from "react";
+import { Trans, useTranslation } from "react-i18next";
 import { company } from "../data/company";
 
-const AboutSection = () => (
-  <section id="about" className="about-section">
-    <img
-      src="/about_us.jpg"
-      alt="Hakkımızda"
-      className="about-section-image"
-      loading="lazy"
-    />
-    <div className="about-section-content">
-      <h2>Hakkımızda</h2>
-      <p>
-        <span className="about-highlight">{company.shortName}</span> olarak,
-        sektördeki 20+ yıllık tecrübemiz ve yenilikçi yaklaşımımız ile
-        müşterilerimize en kaliteli ürünleri sunuyoruz.
-        <br />
-        <br />
-        Modern tesislerimizde, sürdürülebilirlik ve güvenliği ön planda tutarak,
-        çevre dostu ve yüksek performanslı çözümler geliştiriyoruz.
-        <br />
-        <br />
-        Müşteri memnuniyeti ve güven odaklı hizmet anlayışımız ile, iş
-        ortaklarımızın ihtiyaçlarına özel çözümler üretiyor, sektörde fark
-        yaratıyoruz.
-        <br />
-        <br />
-        <span className="about-cta">
-          Bize katılın, geleceği birlikte şekillendirelim.
-        </span>
-      </p>
-    </div>
-  </section>
-);
+const AboutSection = () => {
+  const { t } = useTranslation();
+
+  return (
+    <section id="about" className="about-section">
+      <img
+        src={`${process.env.PUBLIC_URL}/about_us.jpg`}
+        alt={t("about.alt")}
+        className="about-section-image"
+        loading="lazy"
+      />
+      <div className="about-section-content">
+        <h2>{t("about.title")}</h2>
+        <p>
+          <Trans
+            i18nKey="about.p1"
+            values={{ name: company.shortName }}
+            components={{ highlight: <span className="about-highlight" /> }}
+          />
+          <br />
+          <br />
+          {t("about.p2")}
+          <br />
+          <br />
+          {t("about.p3")}
+          <br />
+          <br />
+          <span className="about-cta">{t("about.cta")}</span>
+        </p>
+      </div>
+    </section>
+  );
+};
 
 export default AboutSection;

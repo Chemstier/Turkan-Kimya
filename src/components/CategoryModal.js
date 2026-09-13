@@ -1,7 +1,9 @@
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 
 const CategoryModal = ({ category, onClose }) => {
   const closeButtonRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     document.body.classList.add("modal-open");
@@ -36,7 +38,7 @@ const CategoryModal = ({ category, onClose }) => {
           type="button"
           className="category-modal-close"
           onClick={onClose}
-          aria-label="Kapat"
+          aria-label={t("modal.close")}
         >
           ×
         </button>

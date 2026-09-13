@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { company } from "../data/company";
 
 const HomeSection = () => {
   const videoRef = useRef(null);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -23,7 +25,7 @@ const HomeSection = () => {
         <video
           ref={videoRef}
           className="home-bg-video"
-          src="/bg_video.mp4"
+          src={`${process.env.PUBLIC_URL}/bg_video.mp4`}
           autoPlay
           loop
           muted
@@ -32,15 +34,13 @@ const HomeSection = () => {
       </div>
       <div className="home-content">
         <h1 className="home-title animate-fade-in">{company.name}</h1>
-        <p className="home-subtext animate-fade-in-delay">
-          Sektörde güvenin ve kalitenin adresi.
-        </p>
+        <p className="home-subtext animate-fade-in-delay">{t("home.tagline")}</p>
         <button
           type="button"
           className="scroll-products-btn"
           onClick={handleScrollToProducts}
         >
-          Ürünlerimiz
+          {t("home.cta")}
         </button>
       </div>
     </section>

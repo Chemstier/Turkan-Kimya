@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "Türkan Kimya",
+    "description": "Türkan Lebensmittel- und Chemieprodukte"
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über uns",
+    "products": "Produkte",
+    "offer": "Angebot anfordern",
+    "contact": "Kontakt",
+    "logoAlt": "Türkan Kimya Logo",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen",
+    "language": "Sprache"
+  },
+  "home": {
+    "tagline": "Die Adresse für Vertrauen und Qualität in der Branche.",
+    "cta": "Unsere Produkte"
+  },
+  "about": {
+    "title": "Über uns",
+    "alt": "Über uns",
+    "p1": "Als <highlight>{{name}}</highlight> bieten wir unseren Kunden mit über 20 Jahren Branchenerfahrung und einem innovativen Ansatz Produkte höchster Qualität.",
+    "p2": "In unseren modernen Anlagen entwickeln wir umweltfreundliche, leistungsstarke Lösungen – mit Nachhaltigkeit und Sicherheit im Vordergrund.",
+    "p3": "Mit einem Serviceverständnis, das auf Kundenzufriedenheit und Vertrauen ausgerichtet ist, schaffen wir maßgeschneiderte Lösungen für unsere Partner und setzen uns in der Branche ab.",
+    "cta": "Mit den passenden Lösungen für Ihr Unternehmen stehen wir an Ihrer Seite."
+  },
+  "products": {
+    "title": "Unsere Produkte"
+  },
+  "offer": {
+    "title": "Angebot anfordern",
+    "alt": "Angebot",
+    "name": "Vor- und Nachname",
+    "email": "E-Mail",
+    "phone": "Telefon",
+    "message": "Ihre Nachricht",
+    "charsRemaining": "{{count}} Zeichen übrig",
+    "submit": "Senden",
+    "submitting": "Wird gesendet...",
+    "productSelect": "Produktauswahl",
+    "selectedCount": "({{count}} ausgewählt)",
+    "errors": {
+      "name": "Name ist erforderlich",
+      "email": "Eine gültige E-Mail-Adresse ist erforderlich",
+      "phone": "Telefon ist erforderlich",
+      "message": "Nachricht ist erforderlich",
+      "selectedProducts": "Bitte wählen Sie mindestens ein Produkt aus"
+    },
+    "notConfigured": "Das Formular ist noch nicht eingerichtet. Fügen Sie Ihre Formspree-Formular-ID hinzu.",
+    "captchaRequired": "Bitte schließen Sie die Bot-Prüfung ab.",
+    "captchaFailed": "Sicherheitsprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "submitFailed": "Senden fehlgeschlagen. Bitte versuchen Sie es später erneut oder schreiben Sie uns direkt eine E-Mail.",
+    "successTitle": "Ihre Anfrage wurde gesendet!",
+    "successBody": "Wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "subject": "Angebotsanfrage — Türkan Kimya"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "phone": "Telefon:",
+    "email": "E-Mail:",
+    "hours": "Öffnungszeiten:",
+    "address": "Adresse:",
+    "mapTitle": "Firmenstandort"
+  },
+  "footer": {
+    "copyright": "©{{year}} | {{name}} | Alle Rechte vorbehalten."
+  },
+  "modal": {
+    "close": "Schließen"
+  },
+  "catalog": {
+    "cat1": {
+      "name": "Stärken",
+      "products": {
+        "1": { "name": "Maisstärke" },
+        "2": { "name": "Weizenstärke" },
+        "3": { "name": "Glutenfreie Weizenstärke" },
+        "4": { "name": "Kartoffelstärke" },
+        "5": { "name": "Tapiokastärke" },
+        "6": { "name": "Wachsige Tapiokastärke" },
+        "7": { "name": "Vorgelatinierte Stärke" },
+        "8": { "name": "Modifizierte Stärke" }
+      }
+    },
+    "cat2": {
+      "name": "Süßungsmittel",
+      "products": {
+        "51": { "name": "Aspartam" },
+        "52": { "name": "Acesulfam K" },
+        "53": { "name": "Natriumcyclamat" },
+        "54": { "name": "Natriumsaccharin" },
+        "55": { "name": "Sucralose" },
+        "56": { "name": "Xylit" },
+        "57": { "name": "Maltit" },
+        "58": { "name": "Mannit" },
+        "59": { "name": "Sorbit 70%" },
+        "60": { "name": "Sorbit-Pulver" },
+        "61": { "name": "Fructose" },
+        "62": { "name": "Monk Fruit" },
+        "63": { "name": "Erythrit" },
+        "64": { "name": "Stevia" },
+        "65": { "name": "Süßungsmittel-Mix" },
+        "66": { "name": "Maltodextrin" },
+        "67": { "name": "Dextrose" },
+        "68": { "name": "Polydextrose" },
+        "69": { "name": "Fructose-Pulver" }
+      }
+    },
+    "cat3": {
+      "name": "Geliermittel und Verdickungsmittel",
+      "products": {
+        "101": { "name": "Natriumalginat" },
+        "102": { "name": "Agar-Agar" },
+        "103": { "name": "Gelatine" },
+        "104": { "name": "Carrageen" },
+        "105": { "name": "Johannisbrotkernmehl" },
+        "106": { "name": "Guarkernmehl" },
+        "107": { "name": "Gummi arabicum" },
+        "108": { "name": "Pektin" },
+        "109": { "name": "Xanthan" },
+        "110": { "name": "Carboxymethylcellulose", "description": "CMC" },
+        "111": { "name": "Methylcellulose" },
+        "112": { "name": "Hydroxypropylmethylcellulose" },
+        "113": { "name": "Konjakgummi" }
+      }
+    },
+    "cat4": {
+      "name": "Synthetische Farbstoffe",
+      "products": {
+        "151": { "name": "Tartrazin" },
+        "152": { "name": "Chinolingelb" },
+        "153": { "name": "Sunset Yellow" },
+        "154": { "name": "Azorubin" },
+        "155": { "name": "Ponceau 4R" },
+        "156": { "name": "Erythrosin" },
+        "157": { "name": "Allurarot" },
+        "158": { "name": "Indigotin" },
+        "159": { "name": "Brillantblau" },
+        "160": { "name": "Pea Green" },
+        "161": { "name": "Brilliant Black PN" },
+        "162": { "name": "Chocolate Brown" },
+        "163": { "name": "Dark Brown" },
+        "164": { "name": "Titandioxid" }
+      }
+    },
+    "cat5": {
+      "name": "Natürliche Farbstoffe",
+      "products": {
+        "201": { "name": "Beta-Carotin" },
+        "202": { "name": "Kurkuma" },
+        "203": { "name": "Karmin" },
+        "204": { "name": "Kupferchlorophyll" },
+        "205": { "name": "Karamell flüssig/Pulver" },
+        "206": { "name": "Carbon Black" },
+        "207": { "name": "Paprika-Oleoresin" },
+        "208": { "name": "Annatto" },
+        "209": { "name": "Lycopin" },
+        "210": { "name": "Lutein" },
+        "211": { "name": "Rote Bete" },
+        "212": { "name": "Schwarze Karotte" },
+        "213": { "name": "Hibiskus" }
+      }
+    },
+    "cat6": {
+      "name": "Konservierungsstoffe",
+      "products": {
+        "251": { "name": "Natriumsilicat" },
+        "252": { "name": "Methylparaben" },
+        "253": { "name": "Propylparaben" },
+        "254": { "name": "Povidon-Iod" },
+        "255": { "name": "Triclosan" },
+        "256": { "name": "Chlorhexidin" },
+        "257": { "name": "Calciumpropionat" },
+        "258": { "name": "Verkapselte Sorbinsäure" },
+        "259": { "name": "Sorbinsäure" },
+        "260": { "name": "Äpfelsäure" },
+        "261": { "name": "Natriumbenzoat" },
+        "262": { "name": "Kaliumsorbat" },
+        "263": { "name": "Citronensäure" },
+        "264": { "name": "Natriummetabisulfit" },
+        "265": { "name": "Natriumdiacetat" }
+      }
+    },
+    "cat7": {
+      "name": "Säuren",
+      "products": {
+        "301": { "name": "Kokosfettsäure" },
+        "302": { "name": "Phosphorsäure" },
+        "303": { "name": "Ameisensäure" },
+        "304": { "name": "Phosphorige Säure" },
+        "305": { "name": "Salzsäure" },
+        "306": { "name": "Wasserstoffperoxid (35 %, 50 %)" },
+        "307": { "name": "Salpetersäure" },
+        "308": { "name": "Oxalsäure" },
+        "309": { "name": "Ölsäure" },
+        "310": { "name": "Stearinsäure" },
+        "311": { "name": "Salicylsäure" },
+        "312": { "name": "Weinsäure" },
+        "313": { "name": "Naphthalinsulfonat" },
+        "314": { "name": "LABSA" }
+      }
+    },
+    "cat8": {
+      "name": "Emulgatoren und Tenside",
+      "products": {
+        "351": { "name": "PEG 40-60-6000" },
+        "352": { "name": "Polysorbat 20-60-80" },
+        "353": { "name": "GMS 45-60-90" },
+        "354": { "name": "Rizinusöl" },
+        "355": { "name": "SLES 70%" },
+        "356": { "name": "Betain 35 % - 45 %" },
+        "357": { "name": "Cocodiethanolamide" },
+        "358": { "name": "Cocomonoethanolamide" },
+        "359": { "name": "Perlglanzmittel" },
+        "360": { "name": "Trübungsmittel" },
+        "361": { "name": "Decyl Glucoside" },
+        "362": { "name": "NP 10" },
+        "363": { "name": "Entschäumer flüssig-Pulver" },
+        "364": { "name": "Sonnenblumenlecithin" },
+        "365": { "name": "Sojalecithin" },
+        "366": { "name": "Sorbitantristearat" },
+        "367": { "name": "Polyglycerol Polyricinoleate", "description": "PGPR" }
+      }
+    },
+    "cat9": {
+      "name": "Kakaoprodukte",
+      "products": {
+        "401": { "name": "Natürliches Kakaopulver" },
+        "402": { "name": "Alkalisiertes Kakaopulver" },
+        "403": { "name": "Kakaobutter" },
+        "404": { "name": "Kakaomasse/Likör" }
+      }
+    },
+    "cat10": {
+      "name": "Extrakte",
+      "products": {
+        "451": { "name": "Heidelbeerextrakt" },
+        "452": { "name": "Schwarztee-Extrakt" },
+        "453": { "name": "Knoblauchextrakt" },
+        "454": { "name": "Traubenkernextrakt" },
+        "455": { "name": "Grüne-Bohnen-Extrakt" },
+        "456": { "name": "Guarana-Extrakt" },
+        "457": { "name": "Hefeextrakt" },
+        "458": { "name": "Rote-Bete-Wurzelextrakt" },
+        "459": { "name": "Capsicum-Oleoresin" },
+        "460": { "name": "Panax-Ginseng" }
+      }
+    },
+    "cat11": {
+      "name": "Milchprodukte",
+      "products": {
+        "501": { "name": "Magermilchpulver" },
+        "502": { "name": "Vollmilchpulver" },
+        "503": { "name": "PST" },
+        "504": { "name": "Demineralisiertes PST 70%", "description": "DSPT 70%" },
+        "505": { "name": "Lactose" },
+        "506": { "name": "Stabilisator" },
+        "507": { "name": "Schimmel-Hefe-Pilz-Hemmer" }
+      }
+    },
+    "cat12": {
+      "name": "Sonstiges",
+      "products": {
+        "521": { "name": "Koffein" },
+        "522": { "name": "Eiklarpulver" },
+        "523": { "name": "Eigelbpulver" },
+        "524": { "name": "Volleipulver" },
+        "525": { "name": "MCT-Öl" },
+        "526": { "name": "Kakao" },
+        "527": { "name": "Kaffeeweißer" },
+        "528": { "name": "Teilentrahmtes Milchpulver" },
+        "529": { "name": "DPST" },
+        "530": { "name": "Lactose-Monohydrat" },
+        "531": { "name": "PVP K30" },
+        "532": { "name": "PVP K90" },
+        "533": { "name": "PVP VA 64" },
+        "534": { "name": "Lanolin" },
+        "535": { "name": "D-Limonen" },
+        "536": { "name": "Capomer" }
+      }
+    }
+  }
+}

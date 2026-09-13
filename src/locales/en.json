@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "Türkan Kimya",
+    "description": "Türkan Food and Chemical Products"
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "products": "Products",
+    "offer": "Get a Quote",
+    "contact": "Contact",
+    "logoAlt": "Türkan Kimya logo",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language"
+  },
+  "home": {
+    "tagline": "The address of trust and quality in the industry.",
+    "cta": "Our Products"
+  },
+  "about": {
+    "title": "About Us",
+    "alt": "About Us",
+    "p1": "As <highlight>{{name}}</highlight>, we offer our customers the highest quality products with more than 20 years of industry experience and an innovative approach.",
+    "p2": "In our modern facilities, we develop environmentally friendly, high-performance solutions with sustainability and safety at the forefront.",
+    "p3": "With a service approach focused on customer satisfaction and trust, we create tailored solutions for our partners and make a difference in the industry.",
+    "cta": "We're here with the solutions that best fit your business."
+  },
+  "products": {
+    "title": "Our Products"
+  },
+  "offer": {
+    "title": "Get a Quote",
+    "alt": "Quote",
+    "name": "Full Name",
+    "email": "Email",
+    "phone": "Phone",
+    "message": "Your Message",
+    "charsRemaining": "{{count}} characters remaining",
+    "submit": "Send",
+    "submitting": "Sending...",
+    "productSelect": "Product Selection",
+    "selectedCount": "({{count}} selected)",
+    "errors": {
+      "name": "Name is required",
+      "email": "A valid email is required",
+      "phone": "Phone is required",
+      "message": "Message is required",
+      "selectedProducts": "Please select at least one product"
+    },
+    "notConfigured": "The form is not configured yet. Add your Formspree form ID.",
+    "captchaRequired": "Please complete the bot check.",
+    "captchaFailed": "Security check failed. Please try again.",
+    "submitFailed": "Sending failed. Please try again later or email us directly.",
+    "successTitle": "Your request has been sent!",
+    "successBody": "We will get in touch with you as soon as possible.",
+    "subject": "Quote Request — Türkan Kimya"
+  },
+  "contact": {
+    "title": "Contact",
+    "phone": "Phone:",
+    "email": "Email:",
+    "hours": "Working Hours:",
+    "address": "Address:",
+    "mapTitle": "Company Location"
+  },
+  "footer": {
+    "copyright": "©{{year}} | {{name}} | All rights reserved."
+  },
+  "modal": {
+    "close": "Close"
+  },
+  "catalog": {
+    "cat1": {
+      "name": "Starches",
+      "products": {
+        "1": { "name": "Corn Starch" },
+        "2": { "name": "Wheat Starch" },
+        "3": { "name": "Gluten-Free Wheat Starch" },
+        "4": { "name": "Potato Starch" },
+        "5": { "name": "Tapioca Starch" },
+        "6": { "name": "Waxy Tapioca Starch" },
+        "7": { "name": "Pregelatinized Starch" },
+        "8": { "name": "Modified Starch" }
+      }
+    },
+    "cat2": {
+      "name": "Sweeteners",
+      "products": {
+        "51": { "name": "Aspartame" },
+        "52": { "name": "Acesulfame K" },
+        "53": { "name": "Sodium Cyclamate" },
+        "54": { "name": "Sodium Saccharin" },
+        "55": { "name": "Sucralose" },
+        "56": { "name": "Xylitol" },
+        "57": { "name": "Maltitol" },
+        "58": { "name": "Mannitol" },
+        "59": { "name": "Sorbitol 70%" },
+        "60": { "name": "Sorbitol Powder" },
+        "61": { "name": "Fructose" },
+        "62": { "name": "Monk Fruit" },
+        "63": { "name": "Erythritol" },
+        "64": { "name": "Stevia" },
+        "65": { "name": "Sweetener Mix" },
+        "66": { "name": "Maltodextrin" },
+        "67": { "name": "Dextrose" },
+        "68": { "name": "Polydextrose" },
+        "69": { "name": "Fructose Powder" }
+      }
+    },
+    "cat3": {
+      "name": "Gelling and Thickening Agents",
+      "products": {
+        "101": { "name": "Sodium Alginate" },
+        "102": { "name": "Agar Agar" },
+        "103": { "name": "Gelatin" },
+        "104": { "name": "Carrageenan" },
+        "105": { "name": "Locust Bean Gum" },
+        "106": { "name": "Guar Gum" },
+        "107": { "name": "Gum Arabic" },
+        "108": { "name": "Pectin" },
+        "109": { "name": "Xanthan Gum" },
+        "110": { "name": "Carboxymethyl Cellulose", "description": "CMC" },
+        "111": { "name": "Methyl Cellulose" },
+        "112": { "name": "Hydroxypropyl Methylcellulose" },
+        "113": { "name": "Konjac Gum" }
+      }
+    },
+    "cat4": {
+      "name": "Synthetic Colorants",
+      "products": {
+        "151": { "name": "Tartrazine" },
+        "152": { "name": "Quinoline Yellow" },
+        "153": { "name": "Sunset Yellow" },
+        "154": { "name": "Carmoisine" },
+        "155": { "name": "Ponceau 4R" },
+        "156": { "name": "Erythrosine" },
+        "157": { "name": "Allura Red" },
+        "158": { "name": "Indigo Carmine" },
+        "159": { "name": "Brilliant Blue" },
+        "160": { "name": "Pea Green" },
+        "161": { "name": "Black PN" },
+        "162": { "name": "Chocolate Brown" },
+        "163": { "name": "Dark Brown" },
+        "164": { "name": "Titanium Dioxide" }
+      }
+    },
+    "cat5": {
+      "name": "Natural Colorants",
+      "products": {
+        "201": { "name": "Beta Carotene" },
+        "202": { "name": "Turmeric" },
+        "203": { "name": "Carmine" },
+        "204": { "name": "Copper Chlorophyll" },
+        "205": { "name": "Caramel Liquid/Powder" },
+        "206": { "name": "Carbon Black" },
+        "207": { "name": "Paprika Oleoresin" },
+        "208": { "name": "Annatto" },
+        "209": { "name": "Lycopene" },
+        "210": { "name": "Lutein" },
+        "211": { "name": "Red Beet" },
+        "212": { "name": "Black Carrot" },
+        "213": { "name": "Hibiscus" }
+      }
+    },
+    "cat6": {
+      "name": "Preservatives",
+      "products": {
+        "251": { "name": "Sodium Silicate" },
+        "252": { "name": "Methylparaben" },
+        "253": { "name": "Propylparaben" },
+        "254": { "name": "Povidone Iodine" },
+        "255": { "name": "Triclosan" },
+        "256": { "name": "Chlorhexidine" },
+        "257": { "name": "Calcium Propionate" },
+        "258": { "name": "Encapsulated Sorbic Acid" },
+        "259": { "name": "Sorbic Acid" },
+        "260": { "name": "Malic Acid" },
+        "261": { "name": "Sodium Benzoate" },
+        "262": { "name": "Potassium Sorbate" },
+        "263": { "name": "Citric Acid" },
+        "264": { "name": "Sodium Metabisulfite" },
+        "265": { "name": "Sodium Diacetate" }
+      }
+    },
+    "cat7": {
+      "name": "Acids",
+      "products": {
+        "301": { "name": "Coconut Fatty Acid" },
+        "302": { "name": "Phosphoric Acid" },
+        "303": { "name": "Formic Acid" },
+        "304": { "name": "Phosphorous Acid" },
+        "305": { "name": "Hydrochloric Acid" },
+        "306": { "name": "Hydrogen Peroxide (35%, 50%)" },
+        "307": { "name": "Nitric Acid" },
+        "308": { "name": "Oxalic Acid" },
+        "309": { "name": "Oleic Acid" },
+        "310": { "name": "Stearic Acid" },
+        "311": { "name": "Salicylic Acid" },
+        "312": { "name": "Tartaric Acid" },
+        "313": { "name": "Naphthalene Sulfonate" },
+        "314": { "name": "LABSA" }
+      }
+    },
+    "cat8": {
+      "name": "Emulsifiers and Surfactants",
+      "products": {
+        "351": { "name": "PEG 40-60-6000" },
+        "352": { "name": "Polysorbate 20-60-80" },
+        "353": { "name": "GMS 45-60-90" },
+        "354": { "name": "Castor Oil" },
+        "355": { "name": "SLES 70%" },
+        "356": { "name": "Betaine 35% - 45%" },
+        "357": { "name": "Cocodiethanolamide" },
+        "358": { "name": "Cocomonoethanolamide" },
+        "359": { "name": "Pearlizer" },
+        "360": { "name": "Opacifier" },
+        "361": { "name": "Decyl Glucoside" },
+        "362": { "name": "NP 10" },
+        "363": { "name": "Defoamers Liquid-Powder" },
+        "364": { "name": "Sunflower Lecithin" },
+        "365": { "name": "Soy Lecithin" },
+        "366": { "name": "Sorbitan Tristearate" },
+        "367": { "name": "Polyglycerol Polyricinoleate", "description": "PGPR" }
+      }
+    },
+    "cat9": {
+      "name": "Cocoa Products",
+      "products": {
+        "401": { "name": "Natural Cocoa Powder" },
+        "402": { "name": "Alkalized Cocoa Powder" },
+        "403": { "name": "Cocoa Butter" },
+        "404": { "name": "Cocoa Mass/Liquor" }
+      }
+    },
+    "cat10": {
+      "name": "Extracts",
+      "products": {
+        "451": { "name": "Blueberry Extract" },
+        "452": { "name": "Black Tea Extract" },
+        "453": { "name": "Garlic Extract" },
+        "454": { "name": "Grape Seed Extract" },
+        "455": { "name": "Green Bean Extract" },
+        "456": { "name": "Guarana Extract" },
+        "457": { "name": "Yeast Extract" },
+        "458": { "name": "Beetroot Extract" },
+        "459": { "name": "Capsicum Oleoresin" },
+        "460": { "name": "Panax Ginseng" }
+      }
+    },
+    "cat11": {
+      "name": "Dairy Products",
+      "products": {
+        "501": { "name": "Skim Milk Powder" },
+        "502": { "name": "Whole Milk Powder" },
+        "503": { "name": "PST" },
+        "504": { "name": "Demineralized PST 70%", "description": "DSPT 70%" },
+        "505": { "name": "Lactose" },
+        "506": { "name": "Stabilizer" },
+        "507": { "name": "Mold-yeast-fungus inhibitor" }
+      }
+    },
+    "cat12": {
+      "name": "Other",
+      "products": {
+        "521": { "name": "Caffeine" },
+        "522": { "name": "Egg White Powder" },
+        "523": { "name": "Egg Yolk Powder" },
+        "524": { "name": "Whole Egg Powder" },
+        "525": { "name": "MCT Oil" },
+        "526": { "name": "Cocoa" },
+        "527": { "name": "Coffee Creamer" },
+        "528": { "name": "Semi-Skimmed Milk Powder" },
+        "529": { "name": "DPST" },
+        "530": { "name": "Lactose Monohydrate" },
+        "531": { "name": "PVP K30" },
+        "532": { "name": "PVP K90" },
+        "533": { "name": "PVP VA 64" },
+        "534": { "name": "Lanolin" },
+        "535": { "name": "D-Limonene" },
+        "536": { "name": "Capomer" }
+      }
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "Türkan Kimya",
+    "description": "Türkan Gıda ve Kimya Ürünleri"
+  },
+  "nav": {
+    "home": "Ana Sayfa",
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "offer": "Teklif Al",
+    "contact": "İletişim",
+    "logoAlt": "Türkan Kimya logosu",
+    "openMenu": "Menüyü aç",
+    "closeMenu": "Menüyü kapat",
+    "language": "Dil"
+  },
+  "home": {
+    "tagline": "Sektörde güvenin ve kalitenin adresi.",
+    "cta": "Ürünlerimiz"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "alt": "Hakkımızda",
+    "p1": "<highlight>{{name}}</highlight> olarak, sektördeki 20+ yıllık tecrübemiz ve yenilikçi yaklaşımımız ile müşterilerimize en kaliteli ürünleri sunuyoruz.",
+    "p2": "Modern tesislerimizde, sürdürülebilirlik ve güvenliği ön planda tutarak, çevre dostu ve yüksek performanslı çözümler geliştiriyoruz.",
+    "p3": "Müşteri memnuniyeti ve güven odaklı hizmet anlayışımız ile, iş ortaklarımızın ihtiyaçlarına özel çözümler üretiyor, sektörde fark yaratıyoruz.",
+    "cta": "İşiniz için en uygun çözümlerle yanınızdayız."
+  },
+  "products": {
+    "title": "Ürünlerimiz"
+  },
+  "offer": {
+    "title": "Teklif Al",
+    "alt": "Teklif",
+    "name": "Adınız Soyadınız",
+    "email": "E-posta",
+    "phone": "Telefon",
+    "message": "Mesajınız",
+    "charsRemaining": "{{count}} karakter kaldı",
+    "submit": "Gönder",
+    "submitting": "Gönderiliyor...",
+    "productSelect": "Ürün Seçimi",
+    "selectedCount": "({{count}} seçildi)",
+    "errors": {
+      "name": "İsim gerekli",
+      "email": "Geçerli e-posta gerekli",
+      "phone": "Telefon gerekli",
+      "message": "Mesaj gerekli",
+      "selectedProducts": "En az bir ürün seçmelisiniz"
+    },
+    "notConfigured": "Form henüz yapılandırılmadı. Formspree form ID'sini ekleyin.",
+    "captchaRequired": "Lütfen bot korumasını tamamlayın.",
+    "captchaFailed": "Güvenlik doğrulaması başarısız oldu. Lütfen tekrar deneyin.",
+    "submitFailed": "Gönderim başarısız oldu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin.",
+    "successTitle": "Talebiniz başarıyla iletildi!",
+    "successBody": "En kısa sürede sizinle iletişime geçeceğiz.",
+    "subject": "Teklif Talebi — Türkan Kimya"
+  },
+  "contact": {
+    "title": "İletişim",
+    "phone": "Telefon:",
+    "email": "E-Posta:",
+    "hours": "Çalışma Saatleri:",
+    "address": "Adres:",
+    "mapTitle": "Firma Konumu"
+  },
+  "footer": {
+    "copyright": "©{{year}} | {{name}} | Tüm hakları saklıdır."
+  },
+  "modal": {
+    "close": "Kapat"
+  },
+  "catalog": {
+    "cat1": {
+      "name": "Nişastalar",
+      "products": {
+        "1": { "name": "Mısır Nişastası" },
+        "2": { "name": "Buğday Nişastası" },
+        "3": { "name": "Glutensiz Buğday Nişastası" },
+        "4": { "name": "Patates Nişastası" },
+        "5": { "name": "Tapyoka Nişasta" },
+        "6": { "name": "Waxy Tapyoka Nişasta" },
+        "7": { "name": "Prejel Nişasta" },
+        "8": { "name": "Modifiye Nişasta" }
+      }
+    },
+    "cat2": {
+      "name": "Tatlandırıcılar",
+      "products": {
+        "51": { "name": "Aspartam" },
+        "52": { "name": "Asesülfam K" },
+        "53": { "name": "Sodyum Siklamat" },
+        "54": { "name": "Sodyum Sakkarin" },
+        "55": { "name": "Sükraloz" },
+        "56": { "name": "Ksilitol" },
+        "57": { "name": "Maltitol" },
+        "58": { "name": "Mannitol" },
+        "59": { "name": "Sorbitol %70" },
+        "60": { "name": "Sorbitol Toz" },
+        "61": { "name": "Fruktoz" },
+        "62": { "name": "Monc Fruit" },
+        "63": { "name": "Eritritol" },
+        "64": { "name": "Stevia" },
+        "65": { "name": "Tatlandırıcı Mix" },
+        "66": { "name": "Maltodekstrin" },
+        "67": { "name": "Dextroz" },
+        "68": { "name": "Polidextroz" },
+        "69": { "name": "Toz Fruktoz" }
+      }
+    },
+    "cat3": {
+      "name": "Jelleştirici ve Kıvam Vericiler",
+      "products": {
+        "101": { "name": "Sodyum Aljinat" },
+        "102": { "name": "Agar Agar" },
+        "103": { "name": "Jelatin" },
+        "104": { "name": "Karragenan" },
+        "105": { "name": "Locust Bean Gum" },
+        "106": { "name": "Guar Gum" },
+        "107": { "name": "Gum Arabik" },
+        "108": { "name": "Pektin" },
+        "109": { "name": "Ksantan Gum" },
+        "110": { "name": "Karboksi metil Selüloz", "description": "CMC" },
+        "111": { "name": "Metil Selüloz" },
+        "112": { "name": "Hidroksi Propil Metil Selüloz" },
+        "113": { "name": "Konjac Gum" }
+      }
+    },
+    "cat4": {
+      "name": "Sentetik Renklendiriciler",
+      "products": {
+        "151": { "name": "Tartrazin" },
+        "152": { "name": "Quinoline Yellow" },
+        "153": { "name": "Sunset Yellow" },
+        "154": { "name": "Karmozin" },
+        "155": { "name": "Ponceau 4R" },
+        "156": { "name": "Eritrozin" },
+        "157": { "name": "Allura Red" },
+        "158": { "name": "İndigo Karmin" },
+        "159": { "name": "Brilliant Blue" },
+        "160": { "name": "Pea Green" },
+        "161": { "name": "Black Pn" },
+        "162": { "name": "Chocolate Brown" },
+        "163": { "name": "Dark Brown" },
+        "164": { "name": "Titanyum Dioksit" }
+      }
+    },
+    "cat5": {
+      "name": "Doğal Renklendiriciler",
+      "products": {
+        "201": { "name": "Beta Karoten" },
+        "202": { "name": "Turmerik" },
+        "203": { "name": "Karmin" },
+        "204": { "name": "Bakır Klorofil" },
+        "205": { "name": "Karamel Sıvı/Toz" },
+        "206": { "name": "Carbon Black" },
+        "207": { "name": "Paprika Oleoresin" },
+        "208": { "name": "Annatto" },
+        "209": { "name": "Likopen" },
+        "210": { "name": "Lutein" },
+        "211": { "name": "Red Beet" },
+        "212": { "name": "Black Carrot" },
+        "213": { "name": "Hibiscus" }
+      }
+    },
+    "cat6": {
+      "name": "Koruyucular",
+      "products": {
+        "251": { "name": "Sodyum Silikat" },
+        "252": { "name": "Metil Paraben" },
+        "253": { "name": "Propil Paraben" },
+        "254": { "name": "Povidon İyot" },
+        "255": { "name": "Triklosan" },
+        "256": { "name": "Klorheksidin" },
+        "257": { "name": "Kalsiyum Propiyonat" },
+        "258": { "name": "Enkapsül Sorbik Asit" },
+        "259": { "name": "Sorbik Asit" },
+        "260": { "name": "Malik Asit" },
+        "261": { "name": "Sodyum Benzoat" },
+        "262": { "name": "Potasyum Sorbat" },
+        "263": { "name": "Sitrik Asit" },
+        "264": { "name": "Sodyum Metabisülfit" },
+        "265": { "name": "Sodyum Diasetat" }
+      }
+    },
+    "cat7": {
+      "name": "Asitler",
+      "products": {
+        "301": { "name": "Coco Yağı Asiti" },
+        "302": { "name": "Fosforik Asit" },
+        "303": { "name": "Formik Asit" },
+        "304": { "name": "Fosforuz Asit" },
+        "305": { "name": "Hidroklorik Asit" },
+        "306": { "name": "Hidrojen Peroksit (%35, %50)" },
+        "307": { "name": "Nitrik Asit" },
+        "308": { "name": "Oksalik Asit" },
+        "309": { "name": "Oleik Asit" },
+        "310": { "name": "Steraik Asit" },
+        "311": { "name": "Salisilik Asit" },
+        "312": { "name": "Tartarik Asit" },
+        "313": { "name": "Naftalen Sülfonat" },
+        "314": { "name": "LABSA" }
+      }
+    },
+    "cat8": {
+      "name": "Emülgatörler ve Yüzey Aktifler",
+      "products": {
+        "351": { "name": "PEG 40-60-6000" },
+        "352": { "name": "Polisorbat 20-60-80" },
+        "353": { "name": "GMS 45-60-90" },
+        "354": { "name": "Hint Yağı" },
+        "355": { "name": "SLES %70" },
+        "356": { "name": "BETAİN %35 - %45" },
+        "357": { "name": "Cocodiethanolamide" },
+        "358": { "name": "Cocomonoethanolamide" },
+        "359": { "name": "Sedef" },
+        "360": { "name": "Opaklaştırıcı" },
+        "361": { "name": "Decyl Glucoside" },
+        "362": { "name": "NP 10" },
+        "363": { "name": "Köpük Kesiciler Sıvı-Toz" },
+        "364": { "name": "Ayçiçek Lestin" },
+        "365": { "name": "Soya Lestin" },
+        "366": { "name": "Sorbitan Tri Stearat" },
+        "367": { "name": "Polyglycerol Polyricinoleate", "description": "PGPR" }
+      }
+    },
+    "cat9": {
+      "name": "Kakao Ürünleri",
+      "products": {
+        "401": { "name": "Naturel Kakao Tozu" },
+        "402": { "name": "Alkalize Kakao Tozu" },
+        "403": { "name": "Kakao Yağı" },
+        "404": { "name": "Kakao Kitlesi/Likörü" }
+      }
+    },
+    "cat10": {
+      "name": "Ekstraktlar",
+      "products": {
+        "451": { "name": "Yaban Mersini Ekstraktı" },
+        "452": { "name": "Siyah Çay Ekstraktı" },
+        "453": { "name": "Sarımsak Ekstraktı" },
+        "454": { "name": "Üzüm Çekirdeği Ekstraktı" },
+        "455": { "name": "Yeşil Fasulye Ekstraktı" },
+        "456": { "name": "Guarana Ekstraktı" },
+        "457": { "name": "Maya Ekstraktı" },
+        "458": { "name": "Pancar Kökü Ekstraktı" },
+        "459": { "name": "Capaicum Oleoresin" },
+        "460": { "name": "Ginseng Panax" }
+      }
+    },
+    "cat11": {
+      "name": "Süt Ürünleri",
+      "products": {
+        "501": { "name": "Yağsız Süt Tozu" },
+        "502": { "name": "Tam Yağlı Süt Tozu" },
+        "503": { "name": "PST" },
+        "504": { "name": "Demineralize PST %70", "description": "DSPT %70" },
+        "505": { "name": "Laktoz" },
+        "506": { "name": "Stabilizör" },
+        "507": { "name": "Küf-maya-mantar önleyici" }
+      }
+    },
+    "cat12": {
+      "name": "Diğer",
+      "products": {
+        "521": { "name": "Kafein" },
+        "522": { "name": "Yumurta Akı Tozu" },
+        "523": { "name": "Yumurta Sarısı Tozu" },
+        "524": { "name": "Bütün Yumurta Tozu" },
+        "525": { "name": "MCT Oil" },
+        "526": { "name": "Kakao" },
+        "527": { "name": "Kahve Kreması" },
+        "528": { "name": "Yarım Yağlı Süt Tozu" },
+        "529": { "name": "DPST" },
+        "530": { "name": "Laktoz Monohidrat" },
+        "531": { "name": "PVP K30" },
+        "532": { "name": "PVP K90" },
+        "533": { "name": "PVP VA 64" },
+        "534": { "name": "Lanolin" },
+        "535": { "name": "D-Limonen" },
+        "536": { "name": "Capomer" }
+      }
+    }
+  }
+}

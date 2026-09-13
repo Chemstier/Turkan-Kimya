@@ -1,23 +1,25 @@
 import React, { useState } from "react";
-import { categories } from "../data/categories";
+import { useTranslation } from "react-i18next";
+import { useCatalog } from "../data/useCatalog";
 import CategoryModal from "./CategoryModal";
 
 const ProductsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedCategoryId, setSelectedCategoryId] = useState(null);
+  const { t } = useTranslation();
+  const catalog = useCatalog();
+  const selectedCategory =
+    catalog.find((category) => category.id === selectedCategoryId) || null;
 
   return (
     <section id="products" className="section products-section">
-      <h2>Ürünlerimiz</h2>
-      <p className="products-section-desc">
-        12 farklı kategoride modern ve kaliteli ürünlerimizle hizmetinizdeyiz.
-      </p>
+      <h2>{t("products.title")}</h2>
       <div className="categories-grid">
-        {categories.map((category) => (
+        {catalog.map((category) => (
           <button
             type="button"
             key={category.id}
             className="category-card"
-            onClick={() => setSelectedCategory(category)}
+            onClick={() => setSelectedCategoryId(category.id)}
           >
             <div className="category-image-wrapper">
               <img
@@ -34,7 +36,7 @@ const ProductsSection = () => {
       {selectedCategory && (
         <CategoryModal
           category={selectedCategory}
-          onClose={() => setSelectedCategory(null)}
+          onClose={() => setSelectedCategoryId(null)}
         />
       )}
     </section>
