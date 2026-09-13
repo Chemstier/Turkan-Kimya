@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/Chemstier/Turkan-Kimya/static/css/main.fbb10172.css",
-    "main.js": "/Chemstier/Turkan-Kimya/static/js/main.78016e1d.js",
+    "main.css": "/Chemstier/Turkan-Kimya/static/css/main.51a9e952.css",
+    "main.js": "/Chemstier/Turkan-Kimya/static/js/main.fdb4b5e2.js",
     "static/js/488.9cc09537.chunk.js": "/Chemstier/Turkan-Kimya/static/js/488.9cc09537.chunk.js",
     "static/media/Background.png": "/Chemstier/Turkan-Kimya/static/media/Background.6841d3d6c672d9c50e21.png",
     "index.html": "/Chemstier/Turkan-Kimya/index.html",
-    "main.fbb10172.css.map": "/Chemstier/Turkan-Kimya/static/css/main.fbb10172.css.map",
-    "main.78016e1d.js.map": "/Chemstier/Turkan-Kimya/static/js/main.78016e1d.js.map",
+    "main.51a9e952.css.map": "/Chemstier/Turkan-Kimya/static/css/main.51a9e952.css.map",
+    "main.fdb4b5e2.js.map": "/Chemstier/Turkan-Kimya/static/js/main.fdb4b5e2.js.map",
     "488.9cc09537.chunk.js.map": "/Chemstier/Turkan-Kimya/static/js/488.9cc09537.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fbb10172.css",
-    "static/js/main.78016e1d.js"
+    "static/css/main.51a9e952.css",
+    "static/js/main.fdb4b5e2.js"
   ]
 }
