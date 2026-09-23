@@ -6,16 +6,56 @@ const CategoryModal = ({ category, onClose }) => {
   const { t } = useTranslation();
 
   useEffect(() => {
-    document.body.classList.add("modal-open");
+    const body = document.body;
+    const html = document.documentElement;
+    const scrollY = window.scrollY;
+
+    body.classList.add("modal-open");
+    html.classList.add("modal-open");
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
     closeButtonRef.current?.focus();
+
+    const isInsideModalList = (target) => {
+      const scrollable = document.querySelector(".category-modal-list-scroll");
+      return Boolean(
+        scrollable && (scrollable === target || scrollable.contains(target))
+      );
+    };
+
+    const preventBackgroundScroll = (event) => {
+      if (!isInsideModalList(event.target)) {
+        event.preventDefault();
+      }
+    };
 
     const handleKeyDown = (event) => {
       if (event.key === "Escape") onClose();
     };
 
+    document.addEventListener("touchmove", preventBackgroundScroll, {
+      passive: false,
+    });
+    document.addEventListener("wheel", preventBackgroundScroll, {
+      passive: false,
+    });
     document.addEventListener("keydown", handleKeyDown);
+
     return () => {
-      document.body.classList.remove("modal-open");
+      body.classList.remove("modal-open");
+      html.classList.remove("modal-open");
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      window.scrollTo(0, scrollY);
+      document.removeEventListener("touchmove", preventBackgroundScroll);
+      document.removeEventListener("wheel", preventBackgroundScroll);
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [onClose]);

@@ -395,7 +395,11 @@ a.contact-card-value:hover { color: #ff8c00; }
 .animate-fade-in { opacity: 0; animation: fadeInUp 2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s forwards; }
 .animate-fade-in-delay { opacity: 0; animation: fadeInUp 1s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards; }
 .wave-divider svg { display: block; }
-body.modal-open { overflow: hidden; padding-inline-end: 15px; }
+html.modal-open,
+body.modal-open {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
 .footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; background: #ffe6c0; margin-top: 0; }
 .social-buttons { position: fixed; bottom: 20px; inset-inline-end: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }
 .social-button { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; transition: all 0.3s; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
