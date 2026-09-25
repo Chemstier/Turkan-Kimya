@@ -379,14 +379,50 @@ a.contact-card-value:hover { color: #ff8c00; }
 .contact-card-map iframe { width: 100%; height: 220px; border-radius: 12px; border: none; box-shadow: 0 2px 12px rgba(255,140,0,0.08); }
 
 /* --- Category Modal --- */
-.category-modal-list-scroll { max-height: 320px; overflow-y: auto; margin-top: 12px; border-radius: 10px; border: 1px solid #ffe0b2; background: #fff; padding: 8px 0; }
+.category-modal-list-scroll {
+  max-height: 320px;
+  overflow-y: auto;
+  margin-top: 12px;
+  border-radius: 10px;
+  border: 1px solid #ffe0b2;
+  background: #fff;
+  padding: 8px 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
 .category-product-list { list-style: none; padding: 0; margin: 0; }
 .category-product-item { padding: 12px 16px; border-bottom: 1px solid #ffe0b2; display: flex; flex-direction: column; align-items: flex-start; }
 .category-product-item:last-child { border-bottom: none; }
 .category-product-name { font-weight: 600; color: #222; font-size: 1.08rem; }
 .category-product-desc { color: #666; font-size: 0.98rem; margin-top: 2px; }
-.category-modal-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(34,34,34,0.35); z-index: 9999; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(6px); }
-.category-modal { background: #fff; border-radius: 18px; box-shadow: 0 8px 32px rgba(255,140,0,0.18), 0 0 0 1px #ffe0b2; padding: 38px 32px 32px 32px; min-width: 320px; max-width: 420px; width: 100%; position: relative; animation: fadeInUp 0.5s cubic-bezier(.23,1,.32,1); display: flex; flex-direction: column; }
+.category-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(34,34,34,0.35);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  overscroll-behavior: none;
+  touch-action: none;
+}
+.category-modal {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(255,140,0,0.18), 0 0 0 1px #ffe0b2;
+  padding: 38px 32px 32px 32px;
+  min-width: 320px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  animation: fadeInUp 0.5s cubic-bezier(.23,1,.32,1);
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
+  touch-action: auto;
+}
 .category-modal-close { position: absolute; top: 18px; inset-inline-end: 22px; background: none; border: none; font-size: 2rem; color: #ff8c00; cursor: pointer; font-weight: bold; transition: color 0.2s; z-index: 1; }
 .category-modal-close:hover { color: #d46a00; }
 
@@ -397,8 +433,9 @@ a.contact-card-value:hover { color: #ff8c00; }
 .wave-divider svg { display: block; }
 html.modal-open,
 body.modal-open {
-  overflow: hidden;
+  overflow: hidden !important;
   overscroll-behavior: none;
+  height: 100%;
 }
 .footer { text-align: center; padding: 20px; color: #666; font-size: 0.9rem; background: #ffe6c0; margin-top: 0; }
 .social-buttons { position: fixed; bottom: 20px; inset-inline-end: 20px; display: flex; flex-direction: column; gap: 12px; z-index: 999; }

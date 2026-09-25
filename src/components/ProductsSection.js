@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCatalog } from "../data/useCatalog";
 import CategoryModal from "./CategoryModal";
@@ -9,6 +9,7 @@ const ProductsSection = () => {
   const catalog = useCatalog();
   const selectedCategory =
     catalog.find((category) => category.id === selectedCategoryId) || null;
+  const closeModal = useCallback(() => setSelectedCategoryId(null), []);
 
   return (
     <section id="products" className="section products-section">
@@ -36,7 +37,7 @@ const ProductsSection = () => {
       {selectedCategory && (
         <CategoryModal
           category={selectedCategory}
-          onClose={() => setSelectedCategoryId(null)}
+          onClose={closeModal}
         />
       )}
     </section>
