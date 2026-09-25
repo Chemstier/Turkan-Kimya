@@ -17,6 +17,8 @@ export function getLanguageFromUrl() {
 }
 
 export function detectLanguage() {
+  // Priority: explicit ?lang= → saved preference → Turkish default.
+  // Never use browser/OS language so first visits stay Turkish.
   const fromUrl = getLanguageFromUrl();
   if (fromUrl) return fromUrl;
 
@@ -73,9 +75,11 @@ i18n.use(initReactI18next).init({
     de: { translation: de },
     ar: { translation: ar },
   },
-  lng: initialLanguage,
+  lng: initialLanguage || DEFAULT_LANGUAGE,
   fallbackLng: DEFAULT_LANGUAGE,
   supportedLngs: SUPPORTED_LANGUAGES,
+  nonExplicitSupportedLngs: true,
+  load: "languageOnly",
   interpolation: {
     escapeValue: false,
   },
